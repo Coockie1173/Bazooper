@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/"/>
+    <qresource prefix="/Bazoopie">
+        <file>out.GIF</file>
+        <file>Bazooper0200.png</file>
+        <file>Splash.png</file>
+        <file>BazooTile.png</file>
+    </qresource>
+</RCC>
