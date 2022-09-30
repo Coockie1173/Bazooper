@@ -140,7 +140,7 @@
            <item>
             <widget class="QPushButton" name="LoadBingoStuffButton">
              <property name="text">
-              <string>Load Bingo Items</string>
+              <string>Load Bazooper Items</string>
              </property>
             </widget>
            </item>
@@ -160,7 +160,7 @@
            <bool>false</bool>
           </property>
           <property name="text">
-           <string>Start Bingo</string>
+           <string>Start Bazoopering</string>
           </property>
          </widget>
         </item>

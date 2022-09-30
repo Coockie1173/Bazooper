@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QGraphicsProxyWidget>
 #include <QLabel>
+#define MaxLength 20
 
 BingoItem::BingoItem(int PosX, int PosY, int XAmm,  QString Text)
 {
@@ -13,13 +14,13 @@ BingoItem::BingoItem(int PosX, int PosY, int XAmm,  QString Text)
     ID = PosX + (PosY * XAmm);
     qDebug() << ID;
 
-    if(Text.length() > 10)
+    if(Text.length() > MaxLength)
     {
         QString buf = "";
         for (int i = 0; i < Text.length(); i++)
         {
             buf += Text[i];
-            if(i % 10 == 0 && i != 0)
+            if(i % MaxLength == 0 && i != 0)
             {
                 buf += "\n";
             }
