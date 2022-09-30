@@ -11,10 +11,18 @@
 #include <QPoint>
 #include <QMovie>
 #include <QTimer>
+#include <QSound>
+#include <QTcpServer>
+#include <QRandomGenerator>
 #include "bingoitem.h"
 #define SizeX 128
 #define SizeY 128
+#define AmmSFX 2
 
+std::string SFX[] = {
+    ":/Bazoopie/DriesBazooper.wav",
+    ":/Bazoopie/Bazooper.wav"
+};
 
 void BingoWindow::SetupBingo()
 {
@@ -227,6 +235,9 @@ void BingoWindow::OnBingoButtonClicked(bool State, int ID)
 
         QLabel *gif_anim = new QLabel();
         QMovie *movie = new QMovie(":/Bazoopie/out.GIF");
+
+        QSound::play(QString::fromStdString(SFX[QRandomGenerator::global()->bounded(AmmSFX)]));
+
         movie->setBackgroundColor(Qt::white);
         if (!movie->isValid())
         {
@@ -235,6 +246,7 @@ void BingoWindow::OnBingoButtonClicked(bool State, int ID)
         }
         gif_anim->setMovie(movie);
         movie->start();
+
         connect(movie, &QMovie::frameChanged, this, [=](){
         if(movie->currentFrameNumber() == (movie->frameCount() - 1))
             {

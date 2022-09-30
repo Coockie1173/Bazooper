@@ -5,5 +5,7 @@
         <file>Bazooper0200.png</file>
         <file>Splash.png</file>
         <file>BazooTile.png</file>
+        <file>Bazooper.wav</file>
+        <file>DriesBazooper.wav</file>
     </qresource>
 </RCC>
